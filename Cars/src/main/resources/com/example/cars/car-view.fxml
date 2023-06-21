@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TableColumn?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cars.CarController">
+    <TableView fx:id="carTableView" prefHeight="300.0" prefWidth="980.0" layoutX="10.0" layoutY="10.0">
+        <columns>
+            <TableColumn fx:id="carIdColumn" text="Car ID" prefWidth="75.0"/>
+            <TableColumn fx:id="modelYearColumn" text="Model Year" prefWidth="100.0"/>
+            <TableColumn fx:id="makeColumn" text="Make" prefWidth="100.0"/>
+            <TableColumn fx:id="modelColumn" text="Model" prefWidth="100.0"/>
+            <TableColumn fx:id="priceColumn" text="Price" prefWidth="75.0"/>
+            <TableColumn fx:id="dateSoldColumn" text="Date Sold" prefWidth="100.0"/>
+        </columns>
+    </TableView>
+<!--    use container to seperate two columns below the table-->
+    <AnchorPane prefHeight="300.0" prefWidth="980.0" layoutX="10.0" layoutY="310.0">
+        <ComboBox fx:id="yearComboBox" prefWidth="150.0" layoutX="500.0" layoutY="50.0" promptText="Select Year">
+        </ComboBox>
+        <Label text="Total Cars:" layoutX="510.0" layoutY="150.0"/>
+        <Label fx:id="totalCarsLabel" layoutX="600.0" layoutY="150.0"/>
+        <Label text="Total Sales:" layoutX="510.0" layoutY="180.0"/>
+        <Label fx:id="totalSalesLabel" layoutX="600.0" layoutY="180.0"/>
+        <BarChart fx:id="carSalesBarChart" prefHeight="400.0" prefWidth="400.0" layoutX="5.0" layoutY="10.0">
+            <xAxis>
+                <CategoryAxis fx:id="makeAxis" label="Make"/>
+            </xAxis>
+            <yAxis>
+                <NumberAxis fx:id="countAxis" label="Count"/>
+            </yAxis>
+        </BarChart>
+    </AnchorPane>
+</AnchorPane>
